@@ -80,17 +80,12 @@
 
         var meta = document.createElement('meta');
         meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        meta.content = 'width=device-height, height=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
 
-                var lockFunction =  window.screen.orientation.lock;
-        if (lockFunction.call(window.screen.orientation, 'portrait')) {
-                  console.log('Orientation locked')
-        } else {
-                    console.error('There was a problem in locking the orientation')
-        }
+        document.getElementById("unity-container").style.transform = "rotate(90deg)";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
