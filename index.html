@@ -9,7 +9,7 @@
   </head>
   <body style="background-color: grey;">
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1700 height=782></canvas>
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -55,7 +55,7 @@
         updateBannerVisibility();
       }
       
-      console.log("updated ver");
+      console.log("updated ver 3");
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/POCUS_CarnivalV1.loader.js";
@@ -90,6 +90,9 @@
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
+
+        canvas.style.width = "500px";
+        canvas.style.height = "200px";
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
