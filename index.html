@@ -55,7 +55,7 @@
         updateBannerVisibility();
       }
       
-      console.log("updated ver 3");
+      console.log("updated ver 4");
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/POCUS_CarnivalV1.loader.js";
@@ -91,8 +91,8 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        canvas.style.width = "500px";
-        canvas.style.height = "200px";
+        canvas.style.width = screen.height;
+        canvas.style.height = screen.width;
 
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
