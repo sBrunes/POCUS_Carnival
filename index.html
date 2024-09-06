@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=2436 height=1125></canvas>
+      <canvas id="unity-canvas" width=2436px height=1125px></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -89,12 +89,16 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+        //unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "2436px";
-        canvas.style.height = "1125px";
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        // canvas.style.width = "2436px";
+        // canvas.style.height = "1125px";
       }
 
       loadingBar.style.display = "block";
